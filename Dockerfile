@@ -5,12 +5,12 @@ RUN apt-get update \
 	&& apt-get install -y -qq jq \
 	&& apt-get clean \
 	&& pip install awscli \
-    && pip install awsebcli --upgrade --user \
+    && pip install awsebcli --upgrade \
     && curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest \
     && chmod +x /usr/local/bin/ecs-cli
 
 # Configure the local bins
-ENV PATH="~/.local/bin:${PATH}"
+ENV PATH="/root/.local/bin:${PATH}"
 
 # Install Docker
 RUN curl -sSL https://get.docker.com/ | sh
