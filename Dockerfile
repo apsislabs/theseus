@@ -2,7 +2,7 @@ FROM python:3.8
 
 # Install AWS Tools
 RUN apt-get update \
-	&& apt-get install -y -qq jq \
+	&& apt-get install -y -qq jq gettext-base \
 	&& apt-get clean \
 	&& pip install awscli \
     && pip install awsebcli --upgrade \
